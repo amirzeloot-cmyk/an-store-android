@@ -19,9 +19,14 @@ jobs:
       - run: npm ci
       - run: npx cap sync android
       - run: chmod +x android/gradlew
+      - name: Generate debug keystore
+        run: |
+          mkdir -p ~/.android
+          keytool -genkey -v -keystore ~/.android/debug.keystore -alias androiddebugkey -storepass android -keypass android -keyalg RSA -keysize 2048 -validity 10000 -dname "CN=Android Debug,O=Android,C=US" -noprompt
       - run: cd android && ./gradlew assembleDebug
       - uses: actions/upload-artifact@v4
         with:
           name: an-store-apk
           path: android/app/build/outputs/apk/debug/app-debug.apk
+
 
