@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">A-N STORE</string>
+    <string name="title_activity_main">A-N STORE</string>
+    <string name="package_name">ir.anstore.app</string>
+    <string name="custom_url_scheme">ir.anstore.app</string>
+</resources>

@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>درباره ما | A·N STORE</title>
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#facc15">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --bg:#0a0f1f;
+  --bg2:#111936;
+  --card:#162040;
+  --card2:#1c2b55;
+  --border:rgba(255,255,255,0.08);
+  --text:#eef2ff;
+  --muted:#9aa4c7;
+  --accent:#3b82f6;
+  --accent2:#facc15;
+  --accent3:#f59e0b;
+  --success:#22c55e;
+  --radius:18px;
+  --shadow:0 20px 60px rgba(0,0,0,.45);
+}
+[data-theme="light"]{
+  --bg:#f4f7ff;
+  --bg2:#ffffff;
+  --card:#ffffff;
+  --card2:#eef2ff;
+  --border:rgba(15,23,42,0.08);
+  --text:#0f172a;
+  --muted:#64748b;
+  --shadow:0 20px 60px rgba(15,23,42,.08);
+}
+body{font-family:'Vazirmatn',sans-serif;background:var(--bg);color:var(--text);overflow-x:hidden;line-height:1.8}
+a{text-decoration:none;color:inherit}
+button{font-family:inherit;cursor:pointer}
+.container{width:min(1280px,92%);margin:0 auto}
+/* HEADER - same as index */
+header{position:sticky;top:0;z-index:50;backdrop-filter:blur(16px);background:color-mix(in srgb,var(--bg) 85%, transparent);border-bottom:1px solid var(--border)}
+.header-inner{display:flex;align-items:center;justify-content:space-between;padding:14px 0;gap:16px}
+.logo{display:flex;align-items:center;gap:14px}
+.logo-mark{position:relative;width:140px;height:56px;display:flex;align-items:center;gap:6px;font-weight:900;line-height:1}
+.logo-A{font-size:56px;background:linear-gradient(180deg,#38bdf8 0%,#1d4ed8 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;filter:drop-shadow(0 4px 8px rgba(59,130,246,.4))}
+.logo-dot{color:#facc15;font-size:22px;animation:twinkle 1.6s infinite alternate}
+.logo-N{font-size:56px;background:linear-gradient(180deg,#fde047 0%,#f59e0b 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;filter:drop-shadow(0 4px 8px rgba(250,204,21,.35))}
+.logo-sub{font-size:11px;letter-spacing:8px;color:var(--muted);font-weight:700;margin-top:-6px;text-align:center}
+.logo-wrap{display:flex;flex-direction:column;align-items:center}
+nav{display:flex;gap:8px;align-items:center}
+nav a{padding:8px 14px;border-radius:999px;font-size:14px;font-weight:500;color:var(--muted);transition:.2s}
+nav a:hover,nav a.active{background:var(--card2);color:var(--text)}
+.header-actions{display:flex;align-items:center;gap:10px}
+.btn-icon{width:42px;height:42px;border-radius:12px;background:var(--card);border:1px solid var(--border);display:grid;place-items:center;color:var(--text);position:relative;transition:.2s}
+.btn-icon:hover{transform:translateY(-2px);box-shadow:var(--shadow)}
+.badge{position:absolute;top:-6px;left:-6px;background:#ef4444;color:#fff;font-size:11px;min-width:20px;height:20px;border-radius:999px;display:grid;place-items:center;padding:0 4px;font-weight:800;border:2px solid var(--bg)}
+.btn-primary{background:linear-gradient(135deg,#3b82f6,#1d4ed8);color:#fff;border:none;padding:10px 18px;border-radius:12px;font-weight:800;font-size:14px;box-shadow:0 8px 20px rgba(59,130,246,.35);transition:.2s}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 12px 28px rgba(59,130,246,.45)}
+.btn-ghost{background:var(--card);border:1px solid var(--border);padding:12px 20px;border-radius:12px;font-weight:700;color:var(--text)}
+/* ABOUT HERO */
+.about-hero{position:relative;padding:54px 0 36px;overflow:hidden}
+.about-hero-bg{position:absolute;inset:0;background:
+ radial-gradient(700px 420px at 70% 10%, rgba(59,130,246,.20), transparent 60%),
+ radial-gradient(600px 400px at 10% 90%, rgba(250,204,21,.10), transparent 60%),
+ linear-gradient(180deg, color-mix(in srgb,var(--bg2) 60%, transparent), var(--bg));z-index:-1}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;background:rgba(250,204,21,.10);border:1px solid rgba(250,204,21,.25);color:#facc15;padding:6px 12px;border-radius:999px;font-size:12px;font-weight:700}
+.about-hero h1{font-size:42px;font-weight:900;line-height:1.2;margin:16px 0 14px}
+.about-hero h1 span{background:linear-gradient(90deg,#60a5fa,#facc15);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.about-hero p{color:var(--muted);font-size:15px;max-width:720px;line-height:2}
+.about-hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:32px;align-items:center}
+.hero-card{background:var(--card);border:1px solid var(--border);border-radius:22px;padding:22px;box-shadow:var(--shadow);position:relative;overflow:hidden}
+.hero-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#3b82f6,#facc15)}
+.hero-card h3{font-size:14px;margin-bottom:10px}
+.hero-card ul{list-style:none;font-size:13px;color:var(--muted);line-height:2.2}
+.hero-card ul i{margin-left:6px}
+.trust-badges{display:flex;gap:8px;margin-top:16px;flex-wrap:wrap}
+.trust-badges span{background:var(--card2);border:1px solid var(--border);padding:7px 12px;border-radius:999px;font-size:12px;font-weight:700;display:flex;align-items:center;gap:6px}
+/* SECTIONS */
+.section{padding:32px 0}
+.section-title{font-size:26px;font-weight:900;margin-bottom:8px}
+.section-sub{color:var(--muted);font-size:13px;margin-bottom:22px;line-height:1.9}
+.value-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.value-card{background:var(--card);border:1px solid var(--border);border-radius:18px;padding:22px;transition:.25s}
+.value-card:hover{transform:translateY(-4px);box-shadow:var(--shadow);border-color:rgba(59,130,246,.25)}
+.value-card .ic{width:44px;height:44px;border-radius:12px;display:grid;place-items:center;font-size:18px;margin-bottom:12px}
+.value-card h4{font-size:15px;margin-bottom:6px}
+.value-card p{font-size:13px;color:var(--muted);line-height:1.9}
+.timeline{position:relative;padding-right:22px}
+.timeline::before{content:'';position:absolute;right:7px;top:8px;bottom:8px;width:2px;background:linear-gradient(180deg,#3b82f6,#facc15);opacity:.5;border-radius:999px}
+.tl-item{position:relative;margin-bottom:22px;background:var(--card);border:1px solid var(--border);border-radius:16px;padding:16px 18px 16px 16px}
+.tl-item::before{content:'';position:absolute;right:-18px;top:18px;width:10px;height:10px;background:#facc15;border:3px solid var(--bg2);border-radius:50%;box-shadow:0 0 0 4px rgba(250,204,21,.15)}
+.tl-item b{font-size:13px;color:var(--accent2)}
+.tl-item h4{font-size:15px;margin:4px 0 6px}
+.tl-item p{font-size:13px;color:var(--muted);line-height:1.9}
+.stats-row{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.stat-box{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:18px;text-align:center}
+.stat-box b{font-size:26px;display:block;background:linear-gradient(90deg,#60a5fa,#facc15);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.stat-box span{font-size:12px;color:var(--muted);font-weight:700}
+.faq{margin-top:10px}
+.faq-item{background:var(--card);border:1px solid var(--border);border-radius:14px;margin-bottom:10px;overflow:hidden}
+.faq-q{padding:14px 16px;font-weight:700;font-size:13px;cursor:pointer;display:flex;justify-content:space-between;align-items:center}
+.faq-a{padding:0 16px 14px;font-size:13px;color:var(--muted);line-height:1.9;display:none}
+.faq-item.open .faq-a{display:block}
+.cta-box{background:linear-gradient(135deg,#1e293b 0%,#0f172a 100%);border:1px solid var(--border);border-radius:22px;padding:26px;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;color:#fff}
+.cta-box h3{font-size:18px}
+.cta-box p{font-size:13px;opacity:.8;margin-top:4px}
+/* FOOTER */
+footer{margin-top:36px;border-top:1px solid var(--border);padding:28px 0;background:color-mix(in srgb,var(--bg2) 70%, transparent)}
+.footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:24px}
+.footer-grid h4{font-size:14px;margin-bottom:10px}
+.footer-grid a,.footer-grid p{font-size:12px;color:var(--muted);line-height:2.2;display:block}
+.footer-badges{display:flex;gap:8px;margin-top:14px;flex-wrap:wrap}
+.footer-badges span{background:var(--card);border:1px solid var(--border);padding:6px 12px;border-radius:999px;font-size:11px;font-weight:700;display:flex;align-items:center;gap:6px}
+.copy{margin-top:18px;text-align:center;font-size:11px;color:var(--muted);border-top:1px solid var(--border);padding-top:16px}
+@keyframes twinkle{from{transform:scale(.9) rotate(-10deg);opacity:.7}to{transform:scale(1.2) rotate(10deg);opacity:1}}
+@media(max-width:1000px){.about-hero-grid{grid-template-columns:1fr}.value-grid{grid-template-columns:1fr 1fr}.stats-row{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:700px){.value-grid{grid-template-columns:1fr}.footer-grid{grid-template-columns:1fr}nav{display:none}.about-hero h1{font-size:30px}.stats-row{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="container header-inner">
+    <div class="logo">
+      <div class="logo-wrap">
+        <div class="logo-mark">
+          <span class="logo-A">A</span>
+          <span class="logo-dot">✦</span>
+          <span class="logo-N">N</span>
+        </div>
+        <div class="logo-sub">✦ STORE ✦</div>
+      </div>
+      <div style="border-right:1px solid var(--border);padding-right:14px;margin-right:4px">
+        <b style="display:block;font-size:13px">A·N STORE</b>
+        <small style="color:var(--muted);font-size:11px;font-weight:700">فروشگاه تخصصی یوسی</small>
+      </div>
+    </div>
+    <nav>
+      <a href="index.html">خانه</a>
+      <a href="index.html#prices">لیست قیمت</a>
+      <a href="index.html#order">ثبت سفارش</a>
+      <a href="about.html" class="active">درباره ما</a>
+    </nav>
+    <div class="header-actions">
+      <button class="btn-icon" onclick="location.href='index.html#prices'"><i class="fa-solid fa-bag-shopping"></i><span class="badge" id="cartCount">0</span></button>
+      <button class="btn-primary" onclick="location.href='index.html#prices'">خرید آنی یوسی <i class="fa-solid fa-bolt" style="margin-right:6px"></i></button>
+    </div>
+  </div>
+</header>
+
+<section class="about-hero">
+  <div class="about-hero-bg"></div>
+  <div class="container about-hero-grid">
+    <div>
+      <div class="eyebrow"><i class="fa-solid fa-shield-halved" style="color:#22c55e"></i> فعالیت از ۱۳۹۹ — نماد اعتماد • پرداخت امن • تحویل آنی</div>
+      <h1>درباره <span>A·N STORE</span></h1>
+      <p>
+        فروشگاه تخصصی یوسی پابجی موبایل — فعالیت از ۱۳۹۹. تمامی قیمت‌ها بروز و تحویل آنی است.
+        ما نماینده رسمی هیچ شرکتی نیستیم، اما خرید شما را تا لحظه واریز تضمین می‌کنیم.
+        A·N STORE با تکیه بر سرعت، صداقت و پشتیبانی واقعی، تلاش می‌کند تجربه‌ی خرید یوسی را برای گیمرهای ایرانی ساده، امن و بدون استرس کند.
+      </p>
+      <div class="trust-badges">
+        <span><i class="fa-solid fa-circle-check" style="color:#22c55e"></i> نماد اعتماد</span>
+        <span><i class="fa-solid fa-lock" style="color:#60a5fa"></i> پرداخت امن</span>
+        <span><i class="fa-solid fa-bolt" style="color:#facc15"></i> تحویل آنی</span>
+      </div>
+    </div>
+    <div class="hero-card">
+      <h3><i class="fa-solid fa-quote-right" style="color:#facc15"></i> قول ما به شما</h3>
+      <ul>
+        <li><i class="fa-solid fa-check" style="color:#22c55e"></i> واریز فقط با <b style="color:var(--text)">Player ID</b> — بدون نیاز به رمز</li>
+        <li><i class="fa-solid fa-check" style="color:#22c55e"></i> تحویل ۱ تا ۳ دقیقه، پیگیری لحظه‌ای</li>
+        <li><i class="fa-solid fa-check" style="color:#22c55e"></i> گارانتی بازگشت وجه در صورت عدم واریز</li>
+        <li><i class="fa-solid fa-check" style="color:#22c55e"></i> پشتیبانی ۱۰ صبح تا ۱۰ شب، حتی تعطیلات</li>
+        <li><i class="fa-solid fa-check" style="color:#22c55e"></i> قیمت لحظه‌ای و رقابتی، بدون کارمزد پنهان</li>
+      </ul>
+      <div style="margin-top:14px;background:var(--bg2);border:1px solid var(--border);border-radius:12px;padding:12px;display:flex;gap:12px;align-items:center">
+        <div style="width:44px;height:44px;border-radius:12px;background:linear-gradient(135deg,#facc15,#f59e0b);display:grid;place-items:center;color:#0f172a;font-weight:900">A</div>
+        <div><b style="font-size:13px">پشتیبانی A·N</b><br><small style="color:var(--muted);font-size:11px">میانگین پاسخگویی زیر ۲ دقیقه</small></div>
+        <span style="margin-right:auto;background:#22c55e;color:#fff;padding:4px 10px;border-radius:999px;font-size:11px;font-weight:800">آنلاین</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section container">
+  <h2 class="section-title">چرا A·N STORE؟</h2>
+  <p class="section-sub">سه ستون اصلی ما از روز اول ثابت بوده: سرعت، امنیت، شفافیت.</p>
+  <div class="value-grid">
+    <div class="value-card">
+      <div class="ic" style="background:rgba(59,130,246,.12);color:#60a5fa;border:1px solid rgba(59,130,246,.2)"><i class="fa-solid fa-rocket"></i></div>
+      <h4>سرعت واقعی</h4>
+      <p>۹۵٪ سفارش‌ها زیر ۳ دقیقه واریز می‌شوند. ربات + اپراتور انسانی، صف سفارش را لحظه‌ای چک می‌کند.</p>
+    </div>
+    <div class="value-card">
+      <div class="ic" style="background:rgba(34,197,94,.12);color:#22c55e;border:1px solid rgba(34,197,94,.2)"><i class="fa-solid fa-shield-halved"></i></div>
+      <h4>امنیت کامل</h4>
+      <p>فقط آیدی عددی می‌گیریم، رمز نمی‌خواهیم. پرداخت از درگاه شاپرک و پیگیری با کد یکتا.</p>
+    </div>
+    <div class="value-card">
+      <div class="ic" style="background:rgba(250,204,21,.12);color:#facc15;border:1px solid rgba(250,204,21,.2)"><i class="fa-solid fa-handshake"></i></div>
+      <h4>پشتیبانی تا واریز</h4>
+      <p>تا لحظه‌ی نشستن یوسی روی اکانت کنارت هستیم — چت هوشمند، تلگرام و تلفن.</p>
+    </div>
+    <div class="value-card">
+      <div class="ic" style="background:rgba(245,158,11,.12);color:#f59e0b;border:1px solid rgba(245,158,11,.2)"><i class="fa-solid fa-tags"></i></div>
+      <h4>قیمت منصفانه</h4>
+      <p>قیمت‌ها روزانه با دلار آپدیت و بدون کارمزد پنهان. بسته بزرگ = هر یوسی ارزان‌تر.</p>
+    </div>
+    <div class="value-card">
+      <div class="ic" style="background:rgba(139,92,246,.12);color:#a78bfa;border:1px solid rgba(139,92,246,.2)"><i class="fa-solid fa-rotate-left"></i></div>
+      <h4>گارانتی بازگشت</h4>
+      <p>اگر واریز انجام نشد، وجه همان روز برمی‌گردد. بدون بهانه، بدون معطلی.</p>
+    </div>
+    <div class="value-card">
+      <div class="ic" style="background:rgba(236,72,153,.12);color:#f472b6;border:1px solid rgba(236,72,153,.2)"><i class="fa-solid fa-users"></i></div>
+      <h4>تجربه گیمری</h4>
+      <p>خودمان پلیریم! می‌دانیم یوسی برایت یعنی سیزن، اسکین و کلن — پس جدی می‌گیریم.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section container">
+  <div style="max-width:640px;margin:0 auto">
+    <div style="background:var(--card);border:1px solid var(--border);border-radius:16px;padding:20px">
+      <h4 style="font-size:15px"><i class="fa-solid fa-circle-info" style="color:#facc15"></i> تعهدات ما</h4>
+      <ul style="font-size:13px;color:var(--muted);line-height:2.2;margin-top:10px;list-style:none">
+        <li>• هیچ‌وقت رمز اکانت نمی‌خواهیم</li>
+        <li>• قیمت نهایی قبل از پرداخت نمایش داده می‌شود</li>
+        <li>• اطلاعات شما فروخته یا منتشر نمی‌شود</li>
+        <li>• در صورت تاخیر، پاسخگویی تا حل کامل</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="section container">
+  <h2 class="section-title">سوالات پرتکرار درباره A·N</h2>
+  <div class="faq" id="faq">
+    <div class="faq-item open" onclick="this.classList.toggle('open')">
+      <div class="faq-q">آیا A·N نماینده رسمی پابجی است؟ <i class="fa-solid fa-chevron-down"></i></div>
+      <div class="faq-a">خیر، ما فروشگاه واسط معتبر ایرانی هستیم. یوسی را از تامین‌کنندگان جهانی تهیه و با آیدی روی اکانت شما واریز می‌کنیم و تا واریز تضمین می‌دهیم.</div>
+    </div>
+    <div class="faq-item" onclick="this.classList.toggle('open')">
+      <div class="faq-q">اگر یوسی واریز نشد چه می‌شود؟ <i class="fa-solid fa-chevron-down"></i></div>
+      <div class="faq-a">اول با کد پیگیری بررسی می‌کنیم؛ اگر خطای آیدی باشد کمک به اصلاح، اگر خطای تامین باشد وجه کامل برگشت داده می‌شود.</div>
+    </div>
+    <div class="faq-item" onclick="this.classList.toggle('open')">
+      <div class="faq-q">چرا قیمت‌ها روزانه تغییر می‌کند؟ <i class="fa-solid fa-chevron-down"></i></div>
+      <div class="faq-a">چون نرخ دلار و تامین جهانی نوسان دارد. ما حاشیه سود را ثابت نگه می‌داریم و قیمت را منصفانه آپدیت می‌کنیم.</div>
+    </div>
+    <div class="faq-item" onclick="this.classList.toggle('open')">
+      <div class="faq-q">چطور به شما اعتماد کنم؟ <i class="fa-solid fa-chevron-down"></i></div>
+      <div class="faq-a">نماد اعتماد، +۱۵۰هزار سفارش، نظرات مشتریان، پشتیبانی آنلاین و گارانتی بازگشت — قبل از خرید می‌توانید با پشتیبانی چت کنید.</div>
+    </div>
+  </div>
+</section>
+
+<section class="section container">
+  <div class="cta-box">
+    <div>
+      <h3>آماده‌ای یوسی‌ات رو آنی بگیری؟</h3>
+      <p>لیست قیمت بروز را ببین و با یک کلیک سفارش بده — تحویل زیر ۳ دقیقه.</p>
+    </div>
+    <div style="display:flex;gap:10px;flex-wrap:wrap">
+      <button class="btn-primary" style="padding:14px 22px" onclick="location.href='index.html#prices'"><i class="fa-solid fa-cart-shopping"></i> مشاهده قیمت‌ها</button>
+      <button class="btn-ghost" style="color:#fff;border-color:rgba(255,255,255,.2)" onclick="location.href='index.html#order'"><i class="fa-solid fa-headset"></i> مشاوره خرید</button>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container footer-grid" style="grid-template-columns:1fr 1fr">
+    <div>
+      <h4>دسترسی سریع</h4>
+      <a href="index.html#prices">لیست قیمت یوسی</a>
+      <a href="index.html#order">پیگیری سفارش</a>
+      <a href="#">قوانین و حریم خصوصی</a>
+      <a href="about.html">درباره ما</a>
+    </div>
+    <div>
+      <h4>ارتباط</h4>
+      <p><i class="fa-solid fa-phone"></i> ۰۹۱۲-xxx-xxxx (۱۰ تا ۲۲)</p>
+      <p><i class="fa-brands fa-telegram"></i> @ANSTORE_support</p>
+      <p><i class="fa-solid fa-envelope"></i> support@an-store.ir</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+// theme sync + cart count
+let theme = localStorage.getItem('an_theme')||'dark';
+document.documentElement.setAttribute('data-theme', theme);
+let cart = JSON.parse(localStorage.getItem('an_cart')||'[]');
+document.getElementById('cartCount').textContent = cart.reduce((s,c)=>s+c.qty,0);
+if('serviceWorker' in navigator){
+  window.addEventListener('load', ()=> navigator.serviceWorker.register('sw.js'));
+}
+</script>
+</body>
+</html>
